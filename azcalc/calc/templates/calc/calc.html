@@ -1,0 +1,62 @@
+<html>
+	<body bgcolor="#E6E6FA">
+	<head>
+		<title> Calculator </title>
+	</head>
+	
+	<body>
+		<br>
+		<h1><center><a href="https://www.facebook.com/dongaustin">AD</a> & <a href="https://www.facebook.com/Zenri">ZZ</a> Calculator App</center></h2>
+
+		<center><img src="http://a.dryicons.com/images/icon_sets/blossom/png/64x64/calculator.png" alt="Cal"></center>
+
+		<h4><center>The upper text field shows input.
+			<br>The lower text field shows result.
+			<br>'Clear' will reset everything except whatever is in memory 'm'.
+			<br>'m+' attempts to store a number from the input box.
+			<br>'m-' will clear the memory 'm'.
+			<br>'m' will recall the stored number into the text box.
+			<br><br>*Note: memory functions and anything beyond adding/subtracting/multiplying/dividing two explicit numbers are not functioning as intended</center></h4>
+
+		<form action="/calc/thecalc" method="post">
+
+		<input type="hidden" name="prevVal" value={{newPrevVal}}>
+		<input type="hidden" name="prevOp" value={{newPrevOp}}>
+
+		<!-- calculator 'display' --><center>
+  		<input type="text" name="cinput" readonly value={{newString}}>
+		<br>
+		<input type="number" name"result" readonly value={{newResult}}>
+		<br></center>
+
+  	 	<!-- calculator buttons --><center>
+		<input type="submit" name="number" value="7">
+  		<input type="submit" name="number" value="8">
+  		<input type="submit" name="number" value="9">
+		<input type="submit" name="op" value="/">
+  		<input type="submit" name="memt" value="m+">
+		<br>
+  		<input type="submit" name="number" value="4">
+  		<input type="submit" name="number" value="5">
+  		<input type="submit" name="number" value="6">
+  		<input type="submit" name="op" value="*">
+  		<input type="submit" name="memt" value="m-">
+		<br>
+  		<input type="submit" name="number" value="1">
+  		<input type="submit" name="number" value="2">
+  		<input type="submit" name="number" value="3">
+  		<input type="submit" name="op" value="-">
+  		<input type="submit" style="width: 2.4em" name="memt" value="m">
+		<br>
+  		<input type="submit" style="width: 4.3em" name="number" value="0">
+  		<input type="submit" style="width: 1.8em" name="number" value=".">
+  		<input type="submit" name="op" value="+">
+  		<input type="submit" style="width: 2.4em" name="op" value="=">
+		<br>
+		<input type="submit" name="rst" value="clear"></center>
+
+		<!-- end calculator -->
+		{% csrf_token %}
+  		</form>
+	</body>
+</html>
